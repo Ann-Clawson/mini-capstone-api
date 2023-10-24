@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  get "/all_products", controller: "products", actions: "all_products"
-  get "/Pacer", controller: "products", actions: "Pacer"
-  get "/Hot_Dog", controller: "products", actions: "Hot_Dog"
-  get "/Pathos", controller: "products", actions: "Pathos"
-  get "/Soda_Pop", controller: "products", actions: "Soda_Pop"
-  get "/Bubble_Gum", controller: "products", actions: "Bubble_Gum"
+  get "/all_products", controller: "products", action: "all_products"
+  get "/pacer", controller: "products", action: "pacer"
+  get "/hot_dog", controller: "products", action: "hot_dog"
+  get "/pathos", controller: "products", action: "pathos"
+  get "/soda_pop", controller: "products", action: "soda_pop"
+  get "/bubble_gum", controller: "products", action: "bubble_gum"
 end

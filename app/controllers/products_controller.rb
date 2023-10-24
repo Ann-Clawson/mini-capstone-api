@@ -4,28 +4,28 @@ class ProductsController < ApplicationController
     render :index
   end
 
-  def Pacer
-    @product = Product.name("Pacer")
+  def pacer
+    @product = Product.first
     render :show
   end
 
-  def Hot_Dog
-    @product = Product.name("Hot_Dog")
+  def hot_dog
+    @product = Product.second
     render :show
   end
 
-  def Pathos
-    @product = Product.name("Pathos")
+  def pathos
+    @product = Product.third
     render :show
   end
 
-  def Soda_Pop
-    @product = Product.name("Soda_Pop")
+  def soda_pop
+    @product = Product.fourth
     render :show
   end
 
-  def Bubble_Gum
-    @product = Product.name("Bubble_Gum")
+  def bubble_gum
+    @product = Product.fifth
     render :show
   end
 end
