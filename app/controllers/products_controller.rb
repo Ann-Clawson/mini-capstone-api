@@ -11,12 +11,29 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(
-      name: "Coffee",
-      price: 2,
-      img_url: "https://www.eatingwell.com/thmb/wBKeO_wzc97ngtNFph1c2Y0wHfE=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/What-Happens-To-Your-Body-When-You-Drink-Coffee-Every-Day-2000-ead0e982c03b4a50a4e115f145069b8b.jpg",
-      description: "full throttle",
+      name: params["name"],
+      price: params["price"],
+      img_url: params["img_url"],
+      description: params["description"],
     )
     @product.save
     render :show
+  end
+
+  def update
+    @product = Product.find_by(id: params["id"])
+    @product.update(
+      name: params["name"] || @product.name,
+      price: params["price"] || @product.price,
+      img_url: params["img_url"] || @product.img_url,
+      description: params["description"] || @product.description,
+    )
+    render :show
+  end
+
+  def destroy
+    @product = Product.find_by(id: params["id"])
+    @product.destroy
+    render json: { message: "recipe successfully deleted" }
   end
 end
