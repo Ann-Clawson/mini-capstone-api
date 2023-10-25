@@ -4,7 +4,7 @@ class ProductsController < ApplicationController
     render :index
   end
 
-  def one_product
+  def products
     @product = Product.find_by(id: params["id"])
     render :show
   end
