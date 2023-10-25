@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  get "/all_products", controller: "products", action: "all_products"
-  get "/products/:id" => "products#one_product"
+  get "/products.json", controller: "products", action: "all_products"
+  get "/products/:id" => "products#products"
   # get "/pacer", controller: "products", action: "pacer"
   # get "/hot_dog", controller: "products", action: "hot_dog"
   # get "/pathos", controller: "products", action: "pathos"
