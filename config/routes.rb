@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  get "/products.json", controller: "products", action: "all_products"
+  get "/products", controller: "products", action: "all_products"
   get "/products/:id" => "products#products"
-  post "products" => "products#create"
+  post "/products" => "products#create"
   patch "/products/:id" => "products#update"
   delete "/products/:id" => "products#destroy"
   # get "/pacer", controller: "products", action: "pacer"
