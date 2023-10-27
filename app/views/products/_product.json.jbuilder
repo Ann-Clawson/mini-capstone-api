@@ -9,3 +9,4 @@ json.total product.total
 json.friendly_created_at product.friendly_created_at
 json.created_at product.created_at
 json.updated_at product.updated_at
+json.inventory product.inventory
