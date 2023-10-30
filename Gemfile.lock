@@ -218,6 +218,7 @@ DEPENDENCIES
   bootsnap
   capybara
   debug
+  i18n
   importmap-rails
   jbuilder
   pg (~> 1.1)

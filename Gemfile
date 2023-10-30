@@ -45,6 +45,9 @@ gem "bootsnap", require: false
 #rack-cors to connect securly with front-end
 gem "rack-cors"
 
+#allows message in validation
+gem "i18n"
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
