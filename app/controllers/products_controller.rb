@@ -10,15 +10,18 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @product = Product.new(
+    @product = Product.create(
       name: params["name"],
       price: params["price"],
       img_url: params["img_url"],
       description: params["description"],
       inventory: params["inventory"],
     )
-    @product.save
-    render :show
+    if product.valid?
+      render :show
+    else
+      render json: { errors: @product.errors.full_messages }, status: :unprocessable_entity
+    end
   end
 
   def update
@@ -30,7 +33,11 @@ class ProductsController < ApplicationController
       description: params["description"] || @product.description,
       inventory: params["inventory"] || @product.inventory,
     )
-    render :show
+    if product.valid?
+      render :show
+    else
+      render json: { errors: @product.errors.full_messages }, status: :unprocessable_entity
+    end
   end
 
   def destroy
