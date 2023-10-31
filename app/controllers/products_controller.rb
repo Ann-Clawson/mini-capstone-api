@@ -17,7 +17,7 @@ class ProductsController < ApplicationController
       description: params["description"],
       inventory: params["inventory"],
     )
-    if product.valid?
+    if @product.valid?
       render :show
     else
       render json: { errors: @product.errors.full_messages }, status: :unprocessable_entity
@@ -33,7 +33,7 @@ class ProductsController < ApplicationController
       description: params["description"] || @product.description,
       inventory: params["inventory"] || @product.inventory,
     )
-    if product.valid?
+    if @product.valid?
       render :show
     else
       render json: { errors: @product.errors.full_messages }, status: :unprocessable_entity
