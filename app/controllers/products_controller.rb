@@ -14,7 +14,6 @@ class ProductsController < ApplicationController
       supplier_id: params["supplier_id"],
       name: params["name"],
       price: params["price"],
-      img_url: params["img_url"],
       description: params["description"],
       inventory: params["inventory"],
     )

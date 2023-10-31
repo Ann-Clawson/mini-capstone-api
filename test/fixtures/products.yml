@@ -7,7 +7,7 @@ one:
   description: MyString
 
 two:
-  supplier_id: one
+  supplier: one
   name: MyString
   price: 1.00
   description: MyString
