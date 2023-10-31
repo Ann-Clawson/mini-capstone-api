@@ -12,3 +12,17 @@
 
 # bubble_gum = Product.new(name: "Bubble Gum", price: 0.50, img_url: "https://townsquare.media/site/65/files/2014/03/RS3127_177272954-scr.jpg?w=980&q=75", description: "Chewy")
 # bubble_gum.save
+
+# supplier = Supplier.new(
+#   name: "ACME Co.",
+#   email: "acmeco@acmeco.com",
+#   phone_number: "1234567890",
+# )
+# supplier.save
+
+# supplier = Supplier.new(
+#   name: "Food N' Stuff",
+#   email: "fns@afns.com",
+#   phone_number: "0987654321",
+# )
+# supplier.save
