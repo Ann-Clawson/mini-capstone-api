@@ -32,6 +32,7 @@ class ProductsController < ApplicationController
       img_url: params["img_url"] || @product.img_url,
       description: params["description"] || @product.description,
       inventory: params["inventory"] || @product.inventory,
+      inventory: params["supplier_id"] || @product.supplier_id,
     )
     if @product.valid?
       render :show
