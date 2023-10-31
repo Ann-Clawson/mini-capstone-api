@@ -30,7 +30,6 @@ class ProductsController < ApplicationController
     @product.update(
       name: params["name"] || @product.name,
       price: params["price"] || @product.price,
-      img_url: params["img_url"] || @product.img_url,
       description: params["description"] || @product.description,
       inventory: params["inventory"] || @product.inventory,
       supplier_id: params["supplier_id"] || @product.supplier_id,
