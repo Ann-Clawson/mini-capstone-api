@@ -26,3 +26,38 @@
 #   phone_number: "0987654321",
 # )
 # supplier.save
+
+image = Image.new(
+  url: "https://media.cnn.com/api/v1/images/stellar/prod/181003190618-costco-hot-dog.jpg?q=w_4032,h_2268,x_0,y_0,c_fill",
+)
+image.save
+
+image = Image.new(
+  url: "https://images.vat19.com/pickle-soda/pickle-soda-pop-drinking.jpg",
+)
+image.save
+
+image = Image.new(
+  url: "https://www.gaiam.com/cdn/shop/products/05-61698_C.jpg?v=1673041556",
+)
+image.save
+
+image = Image.new(
+  url: "https://www.eatingwell.com/thmb/wBKeO_wzc97ngtNFph1c2Y0wHfE=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/What-Happens-To-Your-Body-When-You-Drink-Coffee-Every-Day-2000-ead0e982c03b4a50a4e115f145069b8b.jpg",
+)
+image.save
+
+image = Image.new(
+  url: "https://images.squarespace-cdn.com/content/v1/54fbb611e4b0d7c1e151d22a/1610072931440-5JZIEFJ96XSX748F10H3/Pothos-Houseplant.jpg?format=1500w",
+)
+image.save
+
+image = Image.new(
+  url: "https://townsquare.media/site/65/files/2014/03/RS3127_177272954-scr.jpg?w=980&q=75",
+)
+image.save
+
+image = Image.new(
+  url: "https://www.digitaltrends.com/wp-content/uploads/2016/10/waynes-world-amc-pacer.jpg?fit=720%2C720&p=1",
+)
+image.save
