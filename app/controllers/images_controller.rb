@@ -4,11 +4,11 @@ class ImagesController < ApplicationController
       url: params["url"],
       product_id: params["product_id"],
     )
-    # if @image.valid?
-    #   render :show
-    # else
-    #   render json: { errors: @image.errors.full_messages }, status: :unprocessable_entity
-    # end
+    if @image.valid?
+      render json: @image
+    else
+      render json: { errors: @image.errors.full_messages }, status: :unprocessable_entity
+    end
   end
 
   def destroy
