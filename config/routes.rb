@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   post "/products" => "products#create"
   patch "/products/:id" => "products#update"
   delete "/products/:id" => "products#destroy"
+
+  post "/images" => "images#create"
   delete "/images/:id" => "images#destroy"
 
   # get "/pacer", controller: "products", action: "pacer"
