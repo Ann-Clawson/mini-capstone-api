@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
   def index
     @products = Product.all
     render :index
-    pp current_user
+    # pp current_user
   end
 
   def show
