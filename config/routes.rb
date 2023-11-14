@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   post "/images" => "images#create"
   delete "/images/:id" => "images#destroy"
 
+  post "/users" => "users#create"
+
   # get "/pacer", controller: "products", action: "pacer"
   # get "/hot_dog", controller: "products", action: "hot_dog"
   # get "/pathos", controller: "products", action: "pathos"
