@@ -48,6 +48,8 @@ gem "rack-cors"
 #allows message in validation
 gem "i18n"
 
+gem "jwt"
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
