@@ -1,16 +1,16 @@
 class OrdersController < ApplicationController
   def create
     current_product = Product.find_by(id: params["product_id"])
-    quantity = params["quantity"].to_d
-    this_subtotal = quantity * current_product.price
-    this_tax = current_product.tax * this_subtotal.to_i
-    this_total = this_subtotal.to_d + this_tax.to_d
+    quantity = params["quantity"].to_i
+    calculated_subtotal = quantity * current_product.price
+    this_tax = current_product.tax * calculated_subtotal
+    this_total = calculated_subtotal + this_tax
 
     @order = Order.new(
       user_id: current_user.id,
       product_id: current_product.id,
       quantity: quantity,
-      subtotal: this_subtotal,
+      subtotal: calculated_subtotal,
       tax: this_tax,
       total: this_total,
     )
