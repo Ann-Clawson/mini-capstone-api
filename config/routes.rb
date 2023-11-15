@@ -12,6 +12,9 @@ Rails.application.routes.draw do
 
   post "/sessions" => "sessions#create"
 
+  post "/orders" => "orders#create"
+  get "/orders/:id" => "orders#show"
+
   # get "/pacer", controller: "products", action: "pacer"
   # get "/hot_dog", controller: "products", action: "hot_dog"
   # get "/pathos", controller: "products", action: "pathos"

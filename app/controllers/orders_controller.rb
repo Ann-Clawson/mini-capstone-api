@@ -8,5 +8,11 @@ class OrdersController < ApplicationController
       tax: params[:tax],
       total: params[:total],
     )
+    @order.save
+  end
+
+  def show
+    @order = Product.find_by(id: params["id"])
+    render :show
   end
 end
