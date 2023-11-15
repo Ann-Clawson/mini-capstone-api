@@ -12,7 +12,7 @@ class OrdersController < ApplicationController
   end
 
   def show
-    @order = Product.find_by(id: params["id"])
+    @order = Order.find_by(id: params["id"])
     render :show
   end
 end
