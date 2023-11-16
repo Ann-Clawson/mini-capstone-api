@@ -28,6 +28,9 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
     assert_difference "Product.count", 1 do
       post "/products.json", params: { name: "test product", price: 1, description: "test description", supplier_id: Supplier.first.id }, headers: { "Authorization" => "Bearer #{@jwt}" }
       assert_response 200
+
+      post "/products.json"
+      assert_response 401
     end
   end
 
@@ -38,12 +41,18 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
 
     data = JSON.parse(response.body)
     assert_equal "Updated name", data["name"]
+
+    patch "/products/#{Product.first.id}.json"
+    assert_response 401
   end
 
   test "destroy" do
     assert_difference "Product.count", -1 do
       delete "/products/#{Product.first.id}.json", headers: { "Authorization" => "Bearer #{@jwt}" }
       assert_response 200
+
+      delete "/products/#{Product.first.id}.json"
+      assert_response 401
     end
   end
 end
