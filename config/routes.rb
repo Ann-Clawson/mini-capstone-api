@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   delete "/images/:id" => "images#destroy"
 
   post "/users" => "users#create"
+  patch "/users/:id" => "users#update"
 
   post "/sessions" => "sessions#create"
 
