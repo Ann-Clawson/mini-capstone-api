@@ -50,6 +50,6 @@ class ProductsController < ApplicationController
   def destroy
     @product = Product.find_by(id: params["id"])
     @product.destroy
-    render json: { message: "recipe successfully deleted" }
+    render json: { message: "product successfully deleted" }
   end
 end
