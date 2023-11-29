@@ -28,17 +28,16 @@ class Product < ApplicationRecord
   #   Supplier.find_by(id: supplier_id)
   # end
 
-  # has_many :orders
-
-  def images
-    Image.where(product_id: id)
-  end
-
   has_many :category_products
   # has_many :categories, through: :category_products
 
   has_many :carted_products
   has_many :users, through: :carted_products
+  has_many :orders, through: :carted_products
+
+  def images
+    Image.where(product_id: id)
+  end
 
   def categories
     category_products.map do |category_product|
