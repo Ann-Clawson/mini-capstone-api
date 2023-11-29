@@ -19,6 +19,7 @@ Rails.application.routes.draw do
 
   post "/carted_products" => "carted_products#create"
   get "/carted_products" => "carted_products#index"
+  delete "carted_products" => "carted_products#destroy"
 
   # get "/pacer", controller: "products", action: "pacer"
   # get "/hot_dog", controller: "products", action: "hot_dog"
