@@ -38,7 +38,7 @@ class Product < ApplicationRecord
   # has_many :categories, through: :category_products
 
   has_many :carted_products
-  has_many :users, through: carted_products
+  has_many :users, through: :carted_products
 
   def categories
     category_products.map do |category_product|

@@ -1,13 +1,13 @@
 class CartedProductsController < ApplicationController
   def create
-    @carted_product = Carted_Product.create(
+    @carted_product = CartedProduct.create(
       user_id: params["user_id"],
-      product_id: params["integer"],
+      product_id: params["product_id"],
       quantity: params["quantity"],
       status: params["status"],
-      order_id: params["order_id"]
-      )
-    if @carte_product.valid?
+      order_id: params["order_id"],
+    )
+    if @carted_product.valid?
       render :show
     else
       render json: { errors: @carted_product.errors.full_messages }, status: :unprocessable_entity
