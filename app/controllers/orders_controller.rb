@@ -8,7 +8,7 @@ class OrdersController < ApplicationController
 
     calculated_subtotal = 0
     carted_products.each do |carted_product|
-      calculated_subtotal += carted_product.quantity.to_f * carted_product.product.price.to_f
+      calculated_subtotal += carted_product.quantity * carted_product.product.price
     end
 
     calculated_tax = calculated_subtotal * 0.09
