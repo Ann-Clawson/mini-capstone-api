@@ -5,4 +5,6 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors do
     origins "*"
     resource "*", headers: :any, methods: [:get, :post, :patch, :put, :delete]
   end
+
+  origins "mini-capstone.peterxjang.com", "localhost:5173"
 end
