@@ -1,4 +1,6 @@
 class OrdersController < ApplicationController
+  before_action :authenticate_user
+
   def create
     # current_product = Product.find_by(id: params["product_id"])
 
@@ -6,7 +8,7 @@ class OrdersController < ApplicationController
 
     calculated_subtotal = 0
     carted_products.each do |carted_product|
-      calculated_subtotal += carted_product.quantity * carted_product.product.price
+      calculated_subtotal += carted_product.quantity.to_f * carted_product.product.price.to_f
     end
 
     calculated_tax = calculated_subtotal * 0.09
@@ -26,11 +28,11 @@ class OrdersController < ApplicationController
       total: calculated_total,
     )
 
-    if @order.save?
-      @carted_products.update_all(status: "purchased", order_id: @order.id)
+    if @order.save
+      carted_products.update_all(status: "purchased", order_id: @order.id)
       render :show
     else
-      render json: { errors: @order.errors.full_messages }, status: :unprocessable_entity
+      render json: { errors: @order.errors.full_messages }
     end
   end
 
@@ -42,12 +44,5 @@ class OrdersController < ApplicationController
   def index
     @orders = current_user.orders
     render :index
-    # pp current_user
-  end
-
-  def destroy
-    carted_product = current_user.carted_products.find_by(id: parmas["id"], status: "carted")
-    carted_product.update(status: "removed")
-    render json: { message: "Itme removed from cart"}
   end
 end
