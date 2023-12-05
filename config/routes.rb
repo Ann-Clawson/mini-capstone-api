@@ -21,6 +21,8 @@ Rails.application.routes.draw do
   get "/carted_products" => "carted_products#index"
   delete "/carted_products/:id" => "carted_products#destroy"
 
+  get "/images" => "images#index"
+
   # get "/pacer", controller: "products", action: "pacer"
   # get "/hot_dog", controller: "products", action: "hot_dog"
   # get "/pathos", controller: "products", action: "pathos"
