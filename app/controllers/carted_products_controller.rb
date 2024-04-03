@@ -5,7 +5,7 @@ class CartedProductsController < ApplicationController
       product_id: params["product_id"],
       quantity: params["quantity"],
       status: "carted",
-      order_id: params["order_id"],
+      order_id: nil,
     )
     if @carted_product.valid?
       render json: { message: "Items added to cart" }
